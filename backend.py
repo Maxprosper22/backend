@@ -85,4 +85,8 @@ if __name__ == '__main__':
 			'tools.staticdir.dir': './assets'
 	}
 }
+cherrypy.config.update({
+    'server.socket_host': '0.0.0.0',
+    'server.socket_port': os.environ.get('PORT'),
+})
 cherrypy.quickstart(Backend(), '/', conf)
