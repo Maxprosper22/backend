@@ -1,5 +1,5 @@
 cherrypy
 sqlalchemy
 jinja2
-sqlite
+sqlite3
 pil
