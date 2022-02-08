@@ -1,4 +1,3 @@
 cherrypy
 sqlalchemy
 jinja2
-pil
