@@ -24,12 +24,12 @@ def getproductid():
 
 class Backend:
 	@cherrypy.expose
-	#@cherrypy.tools.json_out()
+	@cherrypy.tools.json_out()
 	def index(self):
 		return home
 		
 	@cherrypy. expose
-	@cherrypy.tools.json_out()
+	@cherrypy.tools.j=encode()
 	def getId(self, id):
 		stuff = session.query(Product).filter(Product.id==id).first()
 		print(stuff.id, stuff.name)
