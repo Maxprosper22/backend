@@ -29,7 +29,7 @@ class Backend:
 		return home
 		
 	@cherrypy. expose
-	@cherrypy.tools.j=encode()
+	@cherrypy.tools.encode()
 	def getId(self, id):
 		stuff = session.query(Product).filter(Product.id==id).first()
 		print(stuff.id, stuff.name)
