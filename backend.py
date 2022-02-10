@@ -41,7 +41,7 @@ def getproductid():
 
 class Backend:
 	@cherrypy.expose
-	@cherrypy.tools.json_out()
+	#@cherrypy.tools.json_out()
 	def index(self):
 		with open('./templates/home.html', 'r') as homefile:
 			homepage = homefile
