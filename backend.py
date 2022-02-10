@@ -2,9 +2,6 @@ import cherrypy
 import os
 from db import Product, session
 from pageLoader import home, details
-#from loopdir import stuff
-
-#print(stuff)
 
 def query():
 	data = []
@@ -16,10 +13,8 @@ def query():
 			'desc': item.description,
 			'image': item.image
 		})
-		#print(data)
 	return data
 
-#info = []
 
 def getproductid():
 	for item in session.query(Product):
@@ -32,18 +27,12 @@ def getproductid():
 		})
 	return info
 	
-#value = query()
-
-#def newUser(value):
-#	new = Product(name=value.name, price=value.price)
-#	session.add(new)
-#	session.commit()
 
 class Backend:
 	@cherrypy.expose
 	#@cherrypy.tools.json_out()
 	def index(self):
-		return home.render(query())
+		return "Hello world"
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
@@ -60,15 +49,7 @@ class Backend:
 			'image': stuff.image
 		})
 		return datalist
-		
-#	@cherrypy.expose
-#	@cherrypy.tools.json_in()
-#	def addUser(self, result):
-		#newUser()
-#		r = result
-#		print(r)
-#		return 'Ok'
-		
+				
 	
 if __name__ == '__main__':
     conf = {
