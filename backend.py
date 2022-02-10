@@ -2,7 +2,24 @@ import cherrypy
 import os
 from db import Product, session
 from pageLoader import home, details
+#from loopdir import stuff
 
+#print(stuff)
+
+def query():
+	data = []
+	for item in session.query(Product):
+		data.append({
+			'id': item.id,
+			'name': item.name,
+			'price': item.price,
+			'desc': item.description,
+			'image': item.image
+		})
+		#print(data)
+	return data
+
+#info = []
 
 def getproductid():
 	for item in session.query(Product):
@@ -26,10 +43,12 @@ class Backend:
 	@cherrypy.expose
 	@cherrypy.tools.json_out()
 	def index(self):
-		return home
+		with open('./templates/home.html', 'r') as homefile:
+			homepage = homefile
+		return homepage
 		
 	@cherrypy. expose
-	@cherrypy.tools.encode()
+	@cherrypy.tools.json_out()
 	def getId(self, id):
 		stuff = session.query(Product).filter(Product.id==id).first()
 		print(stuff.id, stuff.name)
