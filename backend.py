@@ -43,10 +43,7 @@ class Backend:
 	@cherrypy.expose
 	#@cherrypy.tools.json_out()
 	def index(self):
-		with open('./templates/home.html') as homefile:
-			homepage = homefile
-			homefile.close
-		return homepage
+		return open('/templates/home.html')
 		
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
