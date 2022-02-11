@@ -3,19 +3,6 @@ import os
 from db import Product, session
 
 
-def query():
-	data = []
-	for item in session.query(Product):
-		data.append({
-			'id': item.id,
-			'name': item.name,
-			'price': item.price,
-			'desc': item.description,
-			'image': item.image
-		})
-	return data
-
-
 def getproductid():
 	for item in session.query(Product):
 		info .append({
@@ -32,7 +19,8 @@ class Backend:
 	@cherrypy.expose
 	@cherrypy.tools.json_out()
 	def index(self):
-		return query()
+		home page = open('site/index.html')
+		return homepage
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
