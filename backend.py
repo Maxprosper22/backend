@@ -5,7 +5,7 @@ from db import Product, session
 from jinja2 import FileSystemLoader, Environment
 
 
-loader = FileSystemLoader('templates')
+loader = FileSystemLoader('assets/templates')
 
 env = Environment(loader=loader)
 
