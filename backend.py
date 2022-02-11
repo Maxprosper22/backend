@@ -38,8 +38,8 @@ class Backend:
 	@cherrypy.expose
 	#@cherrypy.tools.json_out()
 	def index(self):
-		home = env.get_template('home.html')
-		return home.render(name='Max Prosper')
+		def query()
+		return data
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
