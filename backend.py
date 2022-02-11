@@ -2,12 +2,6 @@ import cherrypy
 import os
 from db import Product, session
 
-from jinja2 import FileSystemLoader, Environment
-
-
-loader = FileSystemLoader('assets/templates')
-
-env = Environment(loader=loader)
 
 def query():
 	data = []
@@ -38,8 +32,7 @@ class Backend:
 	@cherrypy.expose
 	@cherrypy.tools.json_out()
 	def index(self):
-		def query()
-		return data
+		return query()
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
@@ -76,6 +69,5 @@ if __name__ == '__main__':
 cherrypy.config.update({
     'server.socket_host': '0.0.0.0',
     'server.socket_port': int(os.environ.get('PORT', '5000')),
-    #'tools.encode.text_only': False,
 })
 cherrypy.quickstart(Backend(), '/', conf)
