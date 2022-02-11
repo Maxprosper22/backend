@@ -1,7 +1,13 @@
 import cherrypy
 import os
 from db import Product, session
-from pageLoader import home, details
+
+from jinja2 import FileSystemLoader, Environment
+
+
+loader = FileSystemLoader('templates')
+
+env = Environment(loader=loader)
 
 def query():
 	data = []
@@ -32,16 +38,8 @@ class Backend:
 	@cherrypy.expose
 	#@cherrypy.tools.json_out()
 	def index(self):
-		data = []
-		for item in session.query(Product):
-			data.append({
-				'id': item.id,
-				'name': item.name,
-				'price': item.price,
-				'desc': item.description,
-				'image': item.image
-			})
-		return home.render(data=data)
+		home = env.get_template('home.html')
+		return home.render(name='Max Prosper')
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
