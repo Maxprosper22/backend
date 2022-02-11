@@ -49,6 +49,9 @@ class Backend:
 			'image': stuff.image
 		})
 		return datalist
+		
+	def admin(self):
+		return Admin Page
 				
 	
 if __name__ == '__main__':
