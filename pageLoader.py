@@ -1,6 +1,6 @@
 from jinja2 import FileSystemLoader, Environment
 
-from backend import query
+#from backend import query
 
 loader = FileSystemLoader('templates')
 
