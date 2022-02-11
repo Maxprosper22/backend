@@ -33,7 +33,7 @@ class Backend:
 	#@cherrypy.tools.json_out()
 	def index(self):
 		query()
-		return home.render(data=datalist)
+		return home.render(data=data)
 	
 	@cherrypy. expose
 	@cherrypy.tools.json_out()
