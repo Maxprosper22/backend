@@ -51,7 +51,7 @@ class Backend:
 		return datalist
 		
 	def admin(self):
-		return Admin Page
+		return "Admin Page"
 				
 	
 if __name__ == '__main__':
