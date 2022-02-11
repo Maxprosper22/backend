@@ -20,7 +20,7 @@ class Backend:
 	#@cherrypy.tools.json_out()
 	def index(self):
 		with open('site/index.html') as f:
-			homepage = f
+			homepage = f.read()
 		return homepage
 	
 	@cherrypy. expose
