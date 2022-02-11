@@ -32,7 +32,15 @@ class Backend:
 	@cherrypy.expose
 	#@cherrypy.tools.json_out()
 	def index(self):
-		query()
+		data = []
+		for item in session.query(Product):
+			data.append({
+				'id': item.id,
+				'name': item.name,
+				'price': item.price,
+				'desc': item.description,
+				'image': item.image
+			})
 		return home.render(data=data)
 	
 	@cherrypy. expose
