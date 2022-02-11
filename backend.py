@@ -51,6 +51,7 @@ class Backend:
 		return datalist
 		
 	@cherrypy.expose
+	@cherrypy.tools.json_out()
 	def admin(self):
 		return "Admin Page"
 				
