@@ -30,7 +30,7 @@ def getproductid():
 
 class Backend:
 	@cherrypy.expose
-	@cherrypy.tools.json_out()
+	#@cherrypy.tools.json_out()
 	def index(self):
 		return open('index.html')
 	
