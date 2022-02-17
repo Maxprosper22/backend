@@ -1,32 +1,19 @@
 import cherrypy
 import os
 from db import Product, session
-
-
+	
 def query():
 	data = {}
 	for item in session.query(Product):
-		data.update({
+		id = item.id
+		data[id] = {
 			'id': item.id,
 			'name': item.name,
 			'price': item.price,
 			'desc': item.description,
 			'image': item.image
-		})
+		}
 	return data
-	
-
-def getproductid():
-	for item in session.query(Product):
-		info .append({
-			'id': item.id,
-			'name': item.name,
-			'price': item.price,
-			'desc': item.description,
-			'image': item.image
-		})
-	return info
-	
 
 class Backend:
 	@cherrypy.expose
@@ -60,7 +47,8 @@ if __name__ == '__main__':
     conf = {
         '/': {
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [ ('Access-Control-Allow-Origin', '*'),
+            'tools.response_headers.headers': [ ('Access-Control-Allow-Origin', '*
+            '),
             ('Content-Type', 'application/json')],
             
             'tools.staticdir.root': os.path.abspath(os.getcwd())
