@@ -4,9 +4,9 @@ from db import Product, session
 
 
 def query():
-	data = []
+	data = {}
 	for item in session.query(Product):
-		data.append({
+		data.update({
 			'id': item.id,
 			'name': item.name,
 			'price': item.price,
