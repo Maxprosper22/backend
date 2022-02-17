@@ -60,7 +60,7 @@ if __name__ == '__main__':
     conf = {
         '/': {
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [ ('Access-Control-Allow-Origin', 'http://localhost:3000'),
+            'tools.response_headers.headers': [ ('Access-Control-Allow-Origin', '*'),
             ('Content-Type', 'application/json')],
             
             'tools.staticdir.root': os.path.abspath(os.getcwd())
